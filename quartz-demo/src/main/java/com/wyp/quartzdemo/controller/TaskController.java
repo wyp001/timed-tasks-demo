@@ -3,10 +3,7 @@ package com.wyp.quartzdemo.controller;
 import com.wyp.quartzdemo.entity.Task;
 import com.wyp.quartzdemo.service.TaskService;
 import javafx.geometry.Pos;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sun.rmi.runtime.Log;
 
 import javax.annotation.Resource;
@@ -52,6 +49,11 @@ public class TaskController {
     public Task startTask(Long taskId){
         Task task = taskService.resumeTask(taskId);
         return task;
+    }
+
+    @PutMapping("updateTask")
+    public Task updateTask(Task task){
+        return taskService.updateTask(task);
     }
 
 

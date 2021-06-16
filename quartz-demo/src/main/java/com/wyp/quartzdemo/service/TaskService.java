@@ -60,4 +60,6 @@ public interface TaskService {
 
     Task stopTask(Long taskId);
 
+    Task updateTask(Task task);
+
 }

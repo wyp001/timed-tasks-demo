@@ -37,11 +37,13 @@ public enum JobStatusEnum implements EnumCodeList.CodeListItem {
     }
 
     /** 获取value */
+    @Override
     public String getValue() {
         return value;
     }
 
     /** 获取code */
+    @Override
     public String getCode() {
         return code;
     }

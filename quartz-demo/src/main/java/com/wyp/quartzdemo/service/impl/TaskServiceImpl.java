@@ -119,4 +119,15 @@ public class TaskServiceImpl implements TaskService {
         }
         return task;
     }
+
+    @Override
+    public Task updateTask(Task task) {
+        task = this.update(task);
+        try {
+            quartzManager.updateJobCron(task);
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        }
+        return task;
+    }
 }
